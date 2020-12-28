@@ -1,0 +1,23 @@
+divmod(a,b) ==> (몫, 나머지)
+>>> divmod(45,6)
+(7, 3)
+
+round(x,n) ==> 
+--> if n is negative
+--> x를 정수 n 번째 자리에서 반올림한다
+
+--> if n is positive
+--> x를 소수점 이하 n번째 자리로 반올림한다
+
+ex) 
+>>> round(113.866, -1)
+110.0
+>>> round(113.866, 2)
+113.87
+
+gcd function 만들기
+
+def gcd(a,b):
+    # gcd는 greatest common divisor 로 두 수의 약수중 가장 큰 공통된 수를 찾는다.
+    # Step 1 두수의 divisor 찾기
+    a_divisor = [i for i in len(i) if a / i ]
