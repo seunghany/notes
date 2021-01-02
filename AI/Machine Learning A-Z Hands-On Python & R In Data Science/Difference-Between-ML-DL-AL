@@ -3,4 +3,45 @@ Science that mimics human intelligence such as decision making, text processing,
 AI is a broader field (i.e the big umbrella) that contains several subfield such as machine learning, robotics, and computer vision
 
 Machine Learning
+Machine Learning is a subfield of Artificial Intelligence that enables machines to improve at a given task with experience.
+Note --> All Machine Learning techniques are classified as Artificial Intelligence ones.
+
+However, not all Aritificial Intelligence could count as Machine Learning since some basic Rule-based engines could be classified as AI but they
+do not learn from experience therefore cannot be classified as Machine Learning.
+
 Machine Learning
+1. Supervised Learning (지도학습)
+    Training Algorithms using labeled input/output data.
+    - Classification (분류)
+    - Clustering (군집화/클러스터링)
+2. Unsupervised Learning (비지도학습)
+    Training Algorithms with no labeled data. It attempts at discovering hidden patterns on its own.
+    - Clustering
+3. Reinforcement Learning (강화학습)
+    - Algorithms that actions to maximize cumulative reward.
+
+Deep Learning
+    Deep learning is a specialized field of Machine learning that relies on training of Deep Aritificial Neural Networks(ANNs) using a large
+dataset such as images or texts.
+- Deep Learning is information processing model inspired by human Brain
+Information Processing Model (https://www.google.com/search?q=what+is+information+processing+model&rlz=1C1CHBF_koUS897US897&sxsrf=ALeKk02OF-J8aTVTdm76b4fNC5VzoqaQZA:1609593703121&tbm=isch&source=iu&ictx=1&fir=rcqnxJMdJIS8lM%252CiGA_RZKEGPY8VM%252C_&vet=1&usg=AI4_-kSjIs0tzFs-f5hNaOS8CxDXxFqv8w&sa=X&ved=2ahUKEwj1v6Dnq_3tAhUjCqYKHa7jDuwQ9QF6BAgyEAE&biw=1367&bih=782#imgrc=rcqnxJMdJIS8lM)
+- 딥러닝은 사람의 뇌를 본따 만든 정보처리 모델이다.
+
+The human brain consists of billions of neurons that communicate to each other using electrical and chemical signals
+and enable humans to see, feel, and make decision. ANNs works by mathematically mimicking the human brain and connecting multiple 
+"Artificial" neurons in a mulilayered fashion. The more hidden layers added to the network, the deeper the network gets.
+
+정리
+1. 딥러닝은 사람의 뇌를 본따 만들었다.
+2. 사람의 뇌는 셀수 없는 뉴론이 서로 정보를 교환하는데, 딥러닝은 이것을 "인공적인" 뉴론을 만들어 수학적으로 규현하였다.
+3. 이 인공적인 뉴론은 레이어로 이루어져 있는데, 이 레이어가 많을수록 네트워크는 더 성능이 좋아진다.
+
+What differentiated deep learning from from machine learning techniques is in their ability to extract features
+automatically as illustrated in the following example.
+
+Machine Learning Process 
+1) Selecting the model to train
+2) Manually performing feature extraction
+
+Deep Learning Process
+1) 
