@@ -44,4 +44,9 @@ Machine Learning Process
 2) Manually performing feature extraction
 
 Deep Learning Process
-1) 
+1) Select the architecture of the network
+2) Features are automatically extracted feeding in the training data (such as image) along with the target class (label)
+
+모든 정보는 
+-> https://www.dropbox.com/s/biqmldsnmtp8g8s/OU2-Difference-Between-ML-DL-AI.pdf?dl=0
+여기 있습니다.
