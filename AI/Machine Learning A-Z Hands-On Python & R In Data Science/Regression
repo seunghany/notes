@@ -1,0 +1,32 @@
+Topic
+1. Simple Linear Regression
+2. Multiple Linear Regression
+3. Polynomial Regression
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Simple Linear Regression
+    - Predict the value of one variable y based on another variable X
+        -> X is called Independent V ariable
+        -> y is called Dependent Variable
+    - Why do we call it simple?
+        -> Because it examines the relationship between two variables only.
+    - Why do we call it linear?
+        -> Because as independent increases or decreases, dependent variable increases or decreases in a linear fashion
+        -> 간단하게 말해서 같이 늘어나고 같이 줄어든다. --> 일직선을 만든다.
+    Formula
+    - y = mX + B
+        -> m = coeffcient = slope of the line
+        -> B = y intercept
+
+Multiple Linear Regression
+    - Predict the value of one variable y based on multiple variable x1,x2,x3.....xn
+    
+    Formula
+    - y = b0 + x1m1 + x2m2 + x3m3+ ......xnmn
+
+Polynomial Regression 
+    - Models the relationship between independent variable X and the dependent variable Y as nth degree polynomial X
+
+    Formula
+    y = b0 + b1x + b2x^2 + b3x^3 + .... bnx^n
