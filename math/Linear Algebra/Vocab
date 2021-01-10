@@ -44,3 +44,67 @@ Rank
 Rank Nullity theoreom
     - Given n * m Matrix A
     - Rank(A) + Nullity(A) = m
+
+echelon form
+    A rectangular matrix is in row echelon form if it has the following three properties:
+        - All nonzero rows are above any rows of all zeros
+        - Each leading entry of a row is in a column to the right of the leading entry of the row above it
+        - All entries of a column below a leading entry are zeros
+
+Reduced Echelon form
+     a matrix in echelon form satisfies the following conditions, then it is in reduced row echelon form:
+        - The matrix is in row-echelon form
+        - Each leading 1 is the only nonzero entry in its column
+
+Inner Product
+    Consider the vector space V,
+    Let u,v,w ∈ V 
+    An inner product <u,v> is a function that maps u,v ->scalar
+    this has following properties
+    1) <u,v> = <v,u> (Symmetric)
+    2) <cu,v> = c<u,v>             c is a constant
+    3) <u+w,v> = <u,v> + <w,v>
+    4) <u,u> >= 0 (Positive Definite)
+        -> if <u,u> = 0 then u = 0
+eg)
+    <au + bw, v> = a<u,v> + b<w,v>
+    <v,au + bw> =  a<u,v> + b<w,v>
+
+Binary mapping
+    - <u,v> = <v,u> 이런것을 symmetric 이라고 부름
+
+Dot product
+    - dot product refers to the product ∑aibi for two vectors  a,b∈R^n
+
+Distance & Metric (V, <-,->), for x,y ∈ V
+    - d(x,y) = ||x-y|| = sqrt( <x-y, x-y> )   --> (Distance between x and y)
+    
+    e.g
+    <x,y> = x^T * y => d(x,y)  => Euclidean Distance
+    Mapping d: V*V -> R
+            (x,y) -> d(x,y) --> no innder product involved
+            is called Metric
+
+Angles and Orthgonality
+
+
+orthonormal이라는 말은 orthogonal과 normal이 합쳐진 말로서 두 벡터 v1, v2가 모두 단위벡터(unit vector)이면서 
+서로 수직이면 두 벡터 v1, v2는 orthonormal(정규직교)하다고 한다
+
+Orthgonal
+    - In elementary geometry, orthogonal is the same as perpendicular. 
+      Two lines or curves are orthogonal if they are perpendicular at their point of intersection.
+      Two vectors and of the real plane or the real space are orthogonal iff their dot product v·w=0
+    - More generally, two elements v and w of an inner product space E are called orthogonal if the inner product of v and w is 0.
+      Two subspaces V and W of E are called orthogonal if every element of V is orthogonal to every element of W. 
+      The same definitions can be applied to any symmetric or differential k-form and to any Hermitian form.
+
+    Orthgonal 정리
+        - orthogonal if the inner product of v and w is 0.
+
+Cauchy-Schwarz inequality
+    - |<x,y>| <= ||x||*||y||
+    -> |<x,y>| / ||x||*||y||  <= 1
+
+    cos w = <x,y> / ||x||*||y||   for some w = [o, pi]
+    --> ||x||*||y|| * cos w = <x,y> = x^T * y      (x^T = x transpose)
