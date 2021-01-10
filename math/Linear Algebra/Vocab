@@ -1,0 +1,46 @@
+Basis
+    - A set B = {u1, u2,....,um} is a basis for subspace S if B spans S and B is linearly independent
+
+Subspace - if satisfies following conditions
+    1) S contains 0, with zero vector
+    2) (Closed under addition) If u and v are in S, the u + s is also in S
+    3) (Closed under multiplication) If r is a real number and u is in S, then ru is also in S
+
+Codomain (Output Vector)
+    - A set containing *ALL POSSIBLE* output for a function,
+    (note that this contains the *range* which is equal to the set of possible output for a function)
+
+Domain (Input Vector)
+    - The set of possible inputs for a function
+        (T is one to one if every vector in domain of T is sent to its "Own" unique vector in the range)
+
+Range
+    - The set of output for a function = set of all vectors y such that T(x) = y
+    - range(T) = range of T = image of T 
+    - Subspace of codomain in R^n
+    Col(A)
+
+Dimension(Subspace) - Let S be a non-zero Subspace. Then the dimension of S is number of vectors in any basis of S.
+
+Kernel
+    - Given a linear transformation T, the set of all vectors x such that T(x) = 0 is the kernel of T, Ker(T) and is subspace 
+      of the domain of T. And is Subspace of R^m
+    - Ax = T(x) 
+    - Ker(T) = Null(A)
+
+Null Space
+    - If A is an n*m matrix, then the set of solutions Ax = 0 is called null space of A, null(A)
+    - Subspace of R^m
+
+Nullity
+    - If A is an n*m matrix, then the nullity of A , Nullity(A), is dimension of null(A)
+    - dim(Null(A)) = # of free variables
+
+Rank
+    - Dimension of row spaces or dimension of column space
+    - # of pivot points
+    - dim(row(A)) = dim(col(A))
+
+Rank Nullity theoreom
+    - Given n * m Matrix A
+    - Rank(A) + Nullity(A) = m
