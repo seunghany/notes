@@ -79,6 +79,7 @@ Dot product
 Distance & Metric (V, <-,->), for x,y ∈ V
     - d(x,y) = ||x-y|| = sqrt( <x-y, x-y> )   --> (Distance between x and y)
     
+    이거 수정 해야함 밑에
     e.g
     <x,y> = x^T * y => d(x,y)  => Euclidean Distance
     Mapping d: V*V -> R
@@ -101,6 +102,18 @@ Orthgonal
 
     Orthgonal 정리
         - orthogonal if the inner product of v and w is 0.
+        eg)
+            x = [1      y = [-1
+                 1]           1]
+            <x,y> = x^T * y = 0
+        ==> [1,1][-1     => 1*-1 + 1*1 = -1 + 1 = 0 ==> orthogonal -> perpendicular
+                   1]
+
+Orthogonal matrix
+    - A  ∈ n*n orthogonal iff columns of A are orthonormal so that A^T * A = I = AA^T
+    -> A^-1 (inverse) = A^T (Transpose)
+
+
 
 Cauchy-Schwarz inequality
     - |<x,y>| <= ||x||*||y||
@@ -108,3 +121,63 @@ Cauchy-Schwarz inequality
 
     cos w = <x,y> / ||x||*||y||   for some w = [o, pi]
     --> ||x||*||y|| * cos w = <x,y> = x^T * y      (x^T = x transpose)
+
+Norm
+     ||x|| = sqrt(<x,x)) = sqrt(x^T * x)
+        note (<x,x> = x^T * y)
+Orthonormal basis
+
+    - A subset {v_1,...,v_k} of a vector space V, with the inner product <,>, is called orthonormal if <v_i,v_j>=0 when i!=j.
+    - That is, the vectors are mutually perpendicular. Moreover, they are all required to have length one: <v_i,v_i>=1.
+    - An orthonormal set must be linearly independent, and so it is a vector basis for the space it spans. Such a basis is called an orthonormal basis.
+
+
+    - In mathematics, particularly linear algebra, an orthonormal basis for an inner product space V with finite dimension is a basis
+      for V whose vectors are orthonormal, that is, they are all unit vectors and orthogonal to each other.[1][2][3].
+      For example, the standard basis for a Euclidean space Rn is an orthonormal basis, where the relevant inner product 
+      is the dot product of vectors. The image of the standard basis under a rotation or reflection (or any orthogonal transformation)
+       is also orthonormal, and every orthonormal basis for Rn arises in this fashion.
+
+
+Orthogonal Projection
+    An Orthogonal Projection is a decomposition of a vector into the sum of two orthogonal(perpendicular) vectors
+In an orthogonal projection, any vector v can be written v=v_W+v_W(ㅗ), so
+
+ <v,Pw>=<v_W,Pw>=<Pv,w>, 
+and the projection matrix is a symmetric matrix iff the vector space projection is orthogonal.
+
+    Practice
+    Ley y  = [7      u = [2
+              6]          1]          Find the orthogonal projection
+    
+    Step 1 Determin the projection of
+        - y projection = (y * u )/ (u*u) * u
+
+        -> 14 + 6
+         --------- [2     = > 20/5 [2     ==> 4 [2    =   [8      = yㅗ
+           4 + 1    1]              1]           1]        4]
+
+    Step 2 Determine the component of y orthogonal to u (projection), y - y projection
+    y - yㅗ = [-1
+                2]
+    yㅗ = [8
+           4]
+    
+    step 3 Verify y, y-yㅗ is orthognonal set
+    <y,y-yㅗ>  = 0
+    8(-1) + 4(2)  = -8 + 8 = 0
+    Correct
+
+Properties of inner product
+    1) bilinear
+    2) positive difinitive
+    3) symmetric
+
+1) bilinear
+    <au + bv, y> = a<u,y> + b<v,y> so blah is bilinear
+2) Positive difinitive
+    show
+    if x = 0 ==> <x,x> = 0
+    if x != 0 ==> <x,x> > 0
+3) symmetric
+    show <y,x> = <x,y>

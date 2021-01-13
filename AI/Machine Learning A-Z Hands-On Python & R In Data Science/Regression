@@ -30,3 +30,4 @@ Polynomial Regression
 
     Formula
     y = b0 + b1x + b2x^2 + b3x^3 + .... bnx^n
+

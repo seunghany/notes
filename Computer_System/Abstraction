@@ -1,0 +1,15 @@
+Abstraction
+    - 전자회로
+    - Boole 논리와 논리 게이트
+    - 컴퓨터 하드웨어
+
+조합 논리 회로
+    1. Sequential logic circuit
+    2. Combinational logic circuit
+
+
+반가산기(Half Adder)
+    - 두 개의 한 비트 이진수 x와y를 더하는 회로
+        -두개의 출력: 합(sum), 올림(carry)
+        sum = x+y
+        carry =x ^ y
