@@ -46,4 +46,5 @@ class Solution(object):
         # O^2 square
 
     def twoSum(self,nums,target):
-        
+        # 더 나은 방법 없을까?
+        # O^n 말고
