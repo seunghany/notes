@@ -43,8 +43,19 @@ class Solution(object):
                 if i!=j:
                     if nums[i] + nums[j] == target:
                         return [i,j]
-        # O^2 square
+        # O(n^2)
 
-    def twoSum(self,nums,target):
+    def twoSum(self, nums, target):
         # 더 나은 방법 없을까?
-        # O^n 말고
+        # map 으로 만들어서
+        # O(n) 까지 가능
+        dic= {}
+        length = len(nums)
+        for i in range(length):
+            dic[nums[i]] = i
+            # O(n)
+        
+        for i in range(length):
+            temp = target - dic[i]
+            if temp in dic.keys() && dic[i] != i:
+                return [i, dic[temp]]
