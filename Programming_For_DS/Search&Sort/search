@@ -1,0 +1,33 @@
+why search?
+
+Searching is a fundamental part of programming, especially in data science
+
+데이터를 다루는 데이터 사이언스는 데이터를 찾는 직업이 아니다.
+찾은 데이터를 활용 해야 하는데, 만약에 데이터를 찾는데 너무 오래 걸린다면?? 
+또는 너무 많은 데이터를 쓴다면??? 
+
+본업은 시작도 못할것이다.
+
+그래서 효율적이게 만들어야 한다!
+
+Linear Search - Algorithm
+
+- Find if target value exists in a list
+- To do this, search from the first item to the last item sequentially (linear search)
+- if the target vlue exists, return the index where the value first occurs (찾았음 나머지를 관심이 없음. 혹시 뒤에 같은 숫자가 있어도 필요 없음)
+- otherwise, return -1 -> 찾는게 없으면 -1
+
+Time Complexity(성능)
+
+how to measure time spent for an algorithm?
+import time
+t_start = time.perf_counter()
+<my algorithm>
+t_end = time.perf_counter()
+return (t_end-t_start) * 1000.0  # unit becomes milliseconds
+
+What if list is sorted??
+    - How can we make the search faster??
+    - Binary search!!!
+
+    
