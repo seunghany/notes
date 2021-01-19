@@ -1,0 +1,13 @@
+Four Priciples of Object Oriented Programming
+1. Encapsulation (은닉성)
+    - __name --> private. 유저들이 바꾸지 못하게
+2. Abstraction
+    - 필요 없는 정보는 유저들한테 숨기고 필요한 정보만 보여주기
+    - 유저들은 사용하기 쉬움
+    - 개발자들은 에러가 발견 되거나, 수정을 해야할 때 외부에서 보여지는 것만 바꾸지 않는다면,
+    안에서 무엇을 해도 유저들은 모름
+3. Inheritance (상속)
+    - redundency를 줄여줌.
+    - 부모 자녀 관계를 (포함 관계에 있는) 잘 정의 해야함
+4. Polymorphism
+    - 부모 자녀에서 이미 정의되 있는 클래스나 메소드가 있어도, 자녀에서 다른 일을 하는 같은 이름을 가진 클래스나 메소드를 만들 수 있음.
