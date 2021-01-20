@@ -1,5 +1,5 @@
 from typing import TextIO
-from practice_coding.data import file_practice
+# from practice_coding.data import file_practice
 def proccess_file(f: TextIO) -> int:
     answer = 0
     # step 1) Processing each line
