@@ -1,4 +1,53 @@
-아래의 나오는 수의 값을 이야기해 보시오
-• 10101110.101
-• 3672 . 23"
-• A351D . C#$
+Bits
+ - 데이터를 나타내는 최소 단위. 모든 데이터는 0과 1의 조합으로 구성되는데,
+  이 0또는 1이 하나의 비트가 됨. 1개의 비트는 두 가지 상태를 나타낼 수 있으므로 n개의 비트로는 2ⁿ가지의 상태를 나타낼 수 있음.
+
+  There are two bit values
+  0 = False = no
+  1 = True = yes
+
+A collection of two bits has four possible states:
+00, 01, 10, 11
+A collection of three bits has eight possible states:
+000, 001, 010, 011, 100, 101, 110, 111
+A collection of n bits has 2ⁿ possible states.
+
+----------------------------------------------------------------------------
+8 bit memory = byte
+8 bits = 1 byte
+
+1 byte = 8 bits -> 2^8 combinations = 256 combinations
+
+2² = 4
+2³ = 8
+2⁴ = 16
+2⁵ = 32
+2⁶ = 64
+2⁷ = 128
+2⁸ = 256
+....
+2¹⁰ = 1024 (about 1,000)
+2²⁰ = 1M   (about 1,000,000)
+2³⁰ = 1G   (about 1,000,000,000)
+2⁴⁰ = 4G   (about 4,000,000,000)
+
+10⁰ = 1
+10¹ = 10
+10² = 10 * 10 = 100
+10³ = 10 * 10 * 10 = 1,000
+10⁴ = 10 * 10 * 10 * 10 = 10,000
+
+hexa digit
+[0,1,2,3,4,5,6,7,8,9,a,b,c,d,e,f]
+
+
+Notation
+Digits
+    -  40392 그냥 우리가 평소 쓰는 숫자
+binary
+    - 딱히 없지만 sometimes we see 0b
+
+hex
+    - ox 로 시작하면 hex라 생각하면 됨
+
+  
