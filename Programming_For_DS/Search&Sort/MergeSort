@@ -1,0 +1,16 @@
+Motivation
+    - Insertion sort and selection sort work but too slow --> Proprtional to N^2
+        - This does not matter when handling small data, but we want to handle big data
+
+- Recall Binary search
+    - 반씩 쪼개는 방법으로 익숙해 져야함.
+
+
+Merge Sort - Idea
+list = [-2, 0, 5, 100, -6 ,4, 7, 9]
+    Step 1: Divide the whole list into two sub-lists
+        - list1 = [-2,0,5,100]
+        - list2 = [-6,4,7,9] 
+    step 2: sort the left sublist and right siblist separately, by using merge sort
+    step 3: Continue until each list has 1 element
+    step 4: Now combine those lists while sorting

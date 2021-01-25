@@ -34,8 +34,11 @@ class MyStack():
         return self.sentinel.next.val
 
     def pop(self):
-        self.sentinel.next = self.sentinel.next.next
-        self.size -= 1
+        if self.size != 0:
+            removal = self.sentinel.next
+            self.sentinel.next = self.sentinel.next.next
+            self.size -= 1
+            removal.next = None
 
     def getSize(self) -> int:
         return self.size
@@ -53,18 +56,20 @@ class MyStack():
         return result
 
 if __name__ == '__main__':
+    #
+    # print(stack)
+    #
+    # print(stack)
+    # top = stack.top()
+    # print("top: ", top)
+    # print(stack.getSize())
+    # print(stack.isEmpty())
+    # stack.push(4)
+    # print(stack.top())
+    # stack.pop()
+    # print(stack.top())
     stack = MyStack()
-    print(stack)
     stack.push(5)
-    print(stack)
-    top = stack.top()
-    print("top: ", top)
-    print(stack.getSize())
-    print(stack.isEmpty())
-    stack.push(4)
-    print(stack.top())
-    stack.pop()
-    print(stack.top())
     stack.push(4)
     stack.push(3)
     stack.push(2)
