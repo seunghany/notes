@@ -4,6 +4,32 @@ class TreeNode():
         self.left = left
         self.right = right
         self.bf = 0  # balance factor  -> left.height - right.height
+
+    def printTree(self) -> list:
+        result = list()
+        thislevel = [self]
+        while thislevel:
+            nextlevel = list()
+            none_list = 1
+            for n in thislevel:
+                if n != None:
+                    none_list = 0
+                    break
+            if none_list == 1:
+                return result
+
+            for n in thislevel:
+                if n != None:
+                    result.append(n.val)
+                    nextlevel.append(n.left)
+                    nextlevel.append(n.right)
+                else:
+                    result.append(None)
+                    nextlevel.append(None)
+                    nextlevel.append(None)
+
+            thislevel = nextlevel
+        return result
 class HBT():
     """Height Balanced Tree
     # balanced tree: One whose subtrees differ in height by at most 1 and are themselves balanced.
@@ -32,12 +58,7 @@ D     E
     def __init__(self, root = None):
         self.root = root
 
-    def rotateRight(self):
-        pass
-        # clockwise rotation
-        # left child becomes parent
-        # original root becomes right child node
-        # original left child's right subtree is now attatched to left of new right tree
+
     def height(self, root: TreeNode) -> int:
         '''
         Recieves TreeNode as a parameter
@@ -91,32 +112,54 @@ D     E
         if newVal == curNode.val:
             return curNode
         # recursive case
-        if curNode.val < newVal:  # 숫자가 작으면 왼쪽으로
+        if curNode.val > newVal:  # 숫자가 작으면 왼쪽으로
             curNode.left = self.insertHelp(curNode.left, newVal)
         else: # 숫자가 크면 오른쪽으로
             curNode.right = self.insertHelp(curNode.right, newVal)
 
         return curNode
 
-    def rotation(self, curNode):
+    def rotateLeft(self, curNode):
         # left rotation
-        newRoot = curNode
-        newRoot = newRoot.right
+        newRoot = curNode.right
         oldLeft = newRoot.left  # 여기서 에러남
         newRoot.left = curNode
         curNode.right = oldLeft
-        self.isBalanced(newRoot)
+
         return newRoot
 
-
+    def rotateRight(self, curNode):
+        # rightRotation
+        newRoot = curNode.left
+        oldRight = newRoot.right
+        newRoot.right = curNode
+        curNode.left = oldRight
+        return newRoot
+        # clockwise rotation
+        # left child becomes parent
+        # original root becomes right child node
+        # original left child's right subtree is now attatched to left of new right tree
 
 
 if __name__ == '__main__':
     Tree = HBT()
-    Tree.insert(5)
-    Tree.insert(6)
+
     Tree.insert(7)
-    Tree.rotation(Tree.root)
+    Tree.insert(9)
+    Tree.insert(8)
+    x = Tree.root.printTree()
+    print(x)
+    # print(Tree.root.right.val)
+    Tree.root.right = Tree.rotateRight(Tree.root.right)
+    print("after right rotation")
+    print(Tree.isBalanced(Tree.root))
+    x = Tree.root.printTree()
+    print(x)
+    Tree.root = Tree.rotateLeft(Tree.root)
+    print("after left rotation")
+    print(Tree.isBalanced(Tree.root))
+    x = Tree.root.printTree()
+    print(x)
     # right right
     # need left rotation
 
