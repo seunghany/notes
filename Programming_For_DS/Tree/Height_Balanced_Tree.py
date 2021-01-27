@@ -22,19 +22,29 @@ D     E
      /
     G
     """
+    def __init__(self, root = None):
+        self.root = root
+
     # step 1 insert
-
     def insert(self, newNode):
-        self.root = self.insertHelp(self, self.root, newNode)
-
+        if type(newNode) == int:
+            newNode = TreeNode(newNode)
+        self.root = self.insertHelp(self.root, newNode)
 
     def insertHelp(self, curNode, newNode):
-        # if Tree is empty
-        if self.root == None:
+        # if Tree is empty, the new node becomes the root
+        if self.root is None:
             self.root = newNode
 
-        if not curNode:
+        if not curNode:  # 만약 끝에 도착한다면 새로운 노드 안착
             return newNode
+
+        if curNode.val < newNode.val:  # 숫자가 작으면 왼쪽으로
+            curNode.left = self.insertHelp(curNode.left, newNode)
+        else: # 숫자가 크면 오른쪽으로
+            curNode.right = self.insertHelp(curNode.right, newNode)
+
+
 
 
 class TreeNode():
@@ -42,3 +52,8 @@ class TreeNode():
         self.val = val
         self.left = left
         self.right = right
+
+if __name__ == '__main__':
+    Tree = HBT()
+    Tree.insert(5)
+    Tree.insert(6)
