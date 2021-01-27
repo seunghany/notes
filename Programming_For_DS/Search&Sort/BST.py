@@ -1,60 +1,89 @@
 class TreeNode():
-    def __init__(self, value:int):
-        self.val = value
+    def __init__(self, x: int) -> None:
+        self.val = x
         self.left = None
         self.right = None
 
-class BST:
-    def __init__(self):
-        self.root = None
+class BST():
+    def __init__(self, root: TreeNode) -> None:
+        self.root = root
 
-    def search(self, target: int):
-        return self.__searchHelp(self.root, target)
-
-    def __searchHelp(curr, target):
-        if not curr:
+    def __searchHelp(self, ,curNode: TreeNode, x: int) -> TreeNode:
+        # (1) Base cases
+        if not curNode:
             return None
-        if target == curr.val:
-            return curr
-        elif target< curr.val:
-            return self.__searchHelp(curr.left, target)
+        if x == curNode.val:
+            return curNode
+
+        # (2) Recursive cases
+        if x < curNode.val:
+            return self.__searchHelp(curNode.left, x)
         else:
-            return self.__searchHelp(curr.right, target)
+            return self.__searchHelp(curNode.right, x)
 
-    def insert(self, insertValue: int):
-        self.root = __self.insertHel(self.root, insertValue)
+    def search(self, x: int) -> TreeNode:
+        return self.__searchHelp(self.root, x)
 
-    def __insertHelp(curr, insertValue):
-        if not curr:  # same as curr is None:
-            return TreeNode(insertValue)
-        if insertValue < curr.val:
-            curr.left = self.__inserHelp(curr.left, insertValue)
+    def __insertHelp(self, curNode: TreeNode, x: int) -> TreeNode:
+        # (1) Base case
+        if not curNode:
+            return TreeNode(x)
+        if x == curNode.val:
+            return curNode
+
+        # (2) Recursive case
+        if x < curNode.val:
+            curNode.left = self.__insertHelp(curNode.left, x)
         else:
-            curr.right = self.__inserHelp(curr.right, insertValue)
+            curNode.right = self.__insertHelp(curNode.right, x)
 
-    def delete(self, deleteValue: int):
-        self.root = __helpDelete(self.root, deleteValue)
+        return curNode
 
-    def __helpDelete(curr, deleteValue):
-        if not curr:
+    def insert(self, x: int) -> None:
+        self.root = self.__insertHelp(self.root, x)
+
+    def __findMax(self, curNode: TreeNode) -> int:
+        # (1) Base case
+        if not curNode.right:
+            return curNode.val
+        # (2) Recursive case
+        else:
+            return self.__findMax(curNode.right)
+
+    def __deleteHelp(self, curNode: TreeNode, x: int) -> TreeNode:
+        # (1) Base case
+        if not curNode:
             return None
-        # 못 찾고 끝에 도착했을때
 
-        if curr.isLeafNode:
-            # no child
-            return None
-        elif not curr.left and curr.right:
-            # has left node but not right
-        elif curr.left and not curr.right:
-            # has no left but right
-        else:
-            # has both left and right
-            # maybe I just need this
+        # (2) Recursive cases
+        if x < curNode.val:
+            curNode.left = self.__deleteHelp(curNode.left, x)
+        elif x > curNode.val:
+            curNode.right = self.__deleteHelp(curNode.right, x)
 
-    def isLeafNode(curr):
-        return not (curr.left or curr.right)
-        # Case 1: Delete a leaf node (no child)
-# Search the node using its key value
-# Simply cut the parent’s link
-# Then the target node is gone
+        else:  # x == curNode.val: We should delete this node!!
+            # (1) No child
+            # if curNode.left == None and curNode.right == None:
+            #    return None
 
+            # (2) One child
+            # elif curNode.left == None and curNode.right:
+            #    return curNode.right
+            # elif curNode.left and curNode.right == None:
+            #    return curNode.left
+
+            if curNode.left == None:
+                return curNode.right
+            elif curNode.right == None:
+                return curNode.left
+
+            # (3) Two children
+            else:
+                leftLargest = self.__findMax(curNode.left)
+                curNode.left = self.__deleteHelp(curNode.left, leftLargest)
+                curNode.val = leftLargest
+
+        return curNode
+
+    def delete(self, x: int) -> None:
+        self.root = self.__deleteHelp(self.root, x)
