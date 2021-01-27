@@ -22,10 +22,23 @@ D     E
      /
     G
     """
+    # step 1 insert
+
+    def insert(self, newNode):
+        self.root = self.insertHelp(self, self.root, newNode)
+
+
+    def insertHelp(self, curNode, newNode):
+        # if Tree is empty
+        if self.root == None:
+            self.root = newNode
+
+        if not curNode:
+            return newNode
 
 
 class TreeNode():
-    def __init__(self, root = None, left = None, right = None):
-        self.root = root
+    def __init__(self, val, left = None, right = None):
+        self.val = val
         self.left = left
         self.right = right
