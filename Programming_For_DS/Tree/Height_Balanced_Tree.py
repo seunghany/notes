@@ -134,7 +134,7 @@ D     E
                     curNode = self.rotateLeft(curNode)
                 else:
                     # right left -> right left rotation needed
-                    curNode.right = self.rotateLeft(curNode.right)
+                    curNode.right = self.rotateRight(curNode.right)
                     # 이제 righttight -> left rotation needed
                     curNode = self.rotateLeft(curNode)
             else:  # curNode.bf == -2
@@ -177,9 +177,9 @@ D     E
 if __name__ == '__main__':
     Tree = HBT()
 
-    Tree.insert(9)
-    Tree.insert(11)
-    Tree.insert(10)
+    Tree.insert(5)
+    Tree.insert(1)
+    Tree.insert(3)
     x = Tree.root.printTree()
     print(x)
     # # print(Tree.root.right.val)
