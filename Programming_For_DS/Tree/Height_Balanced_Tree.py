@@ -69,6 +69,7 @@ D     E
         else:
             return 1 + max(self.height(root.left), self.height(root.right))
 
+
     def isBalanced(self, root: TreeNode) -> bool:
         """
         Recieves TreeNode (root) as a parameter and
@@ -93,6 +94,11 @@ D     E
             print("Balanced")
         else:
             print("Not Balanced")
+            # Condition check이 필요함.
+            # 일단 traverse the tree using dfs
+            # 내 생각엔 postOrder로 하면 될거 같다.
+            # 밑에거 부터 찾는게 좋을테니!
+
             # 만약 unbalanced 하다면 rotation 필요
             # Right Right	==> Z is a right	child of its parent X and BF(Z) ≥ 0
             # Left Left	==> Z is a left	child of its parent X and BF(Z) ≤ 0
@@ -116,6 +122,31 @@ D     E
             curNode.left = self.insertHelp(curNode.left, newVal)
         else: # 숫자가 크면 오른쪽으로
             curNode.right = self.insertHelp(curNode.right, newVal)
+        # This changes all the balancing factor of ancesctors of newly added Node
+        curNode.bf = self.height(curNode.right) - self.height(curNode.left)
+        if curNode.bf not in [-1, 0, 1]:  # out of range
+            # Out of range
+            # Rotation needed
+            if curNode.bf == 2:
+                # 오른쪽이 unbalnce
+                # right right -> left rotation needed
+                if curNode.right.bf >= 0:
+                    curNode = self.rotateLeft(curNode)
+                else:
+                    # right left -> right left rotation needed
+                    curNode.right = self.rotateLeft(curNode.right)
+                    # 이제 righttight -> left rotation needed
+                    curNode = self.rotateLeft(curNode)
+            else:  # curNode.bf == -2
+                # 왼쪽이 unbalance
+                if curNode.left.bf <= 0:
+                    # left left -> right rotation needed
+                    curNode = self.rotateRight(curNode)
+                else:  # curNode.left.bf  > 0
+                    # left right -> left right rotation needed
+                    curNode.left = self.rotateLeft(curNode.left)
+                    # now left left -> right rotation needed
+                    curNode = self.rotateRight(curNode)
 
         return curNode
 
@@ -125,7 +156,10 @@ D     E
         oldLeft = newRoot.left  # 여기서 에러남
         newRoot.left = curNode
         curNode.right = oldLeft
-
+        # Remember Curnode's parent have to point at newRoot now.
+        # parent.right = rotateRight(self,curNode.right)
+        # if curNode is root:
+        # self.root = rotateRight(self,curNode.right)
         return newRoot
 
     def rotateRight(self, curNode):
@@ -134,32 +168,31 @@ D     E
         oldRight = newRoot.right
         newRoot.right = curNode
         curNode.left = oldRight
+        # Remember Curnode's parent have to point at newRoot now.
+        # parent.left = rotateRight(self,curNode.left)  # if curNode is not root
         return newRoot
-        # clockwise rotation
-        # left child becomes parent
-        # original root becomes right child node
-        # original left child's right subtree is now attatched to left of new right tree
+
 
 
 if __name__ == '__main__':
     Tree = HBT()
 
-    Tree.insert(7)
     Tree.insert(9)
-    Tree.insert(8)
+    Tree.insert(11)
+    Tree.insert(10)
     x = Tree.root.printTree()
     print(x)
-    # print(Tree.root.right.val)
-    Tree.root.right = Tree.rotateRight(Tree.root.right)
-    print("after right rotation")
-    print(Tree.isBalanced(Tree.root))
-    x = Tree.root.printTree()
-    print(x)
-    Tree.root = Tree.rotateLeft(Tree.root)
-    print("after left rotation")
-    print(Tree.isBalanced(Tree.root))
-    x = Tree.root.printTree()
-    print(x)
+    # # print(Tree.root.right.val)
+    # Tree.root.right = Tree.rotateRight(Tree.root.right)
+    # print("after right rotation")
+    # print(Tree.isBalanced(Tree.root))
+    # x = Tree.root.printTree()
+    # print(x)
+    # Tree.root = Tree.rotateLeft(Tree.root)
+    # print("after left rotation")
+    # print(Tree.isBalanced(Tree.root))
+    # x = Tree.root.printTree()
+    # print(x)
     # right right
     # need left rotation
 
