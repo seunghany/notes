@@ -153,7 +153,7 @@ D     E
     def rotateLeft(self, curNode):
         # left rotation
         newRoot = curNode.right
-        oldLeft = newRoot.left  # 여기서 에러남
+        oldLeft = newRoot.left
         newRoot.left = curNode
         curNode.right = oldLeft
         # Remember Curnode's parent have to point at newRoot now.
