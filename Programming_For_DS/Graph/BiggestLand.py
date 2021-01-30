@@ -39,6 +39,8 @@ class undi_graph():
 
 def P2(grid) -> int:
     # 바다를 없애고 land의 index 만 구하기
+    all_vertex = []
+    all_edges = []
     new_grid = []
     for j in range(len(grid)):
         land_index = []
@@ -47,10 +49,9 @@ def P2(grid) -> int:
                 # land
                 position = i + j*10
                 land_index.append(position)
+                all_vertex.append(position)
         new_grid.append(land_index)
     print("new_index_grid:", new_grid)
-    for i in range(len(new_grid)):
-        pass
     # make edges
     land_dict = {}
     for i in range(len(new_grid)):
@@ -63,30 +64,22 @@ def P2(grid) -> int:
             if slist[j+1] - slist[j] == 1:
                 edges.append([slist[j], slist[j+1]])
         land_dict[i]["edges"] = edges
-    print(land_dict)
+        all_edges.extend(edges)
+    print("dictionary:", land_dict)
     print("---" * 50)
     num_list = len(new_grid)
-    all_vertex = set()
-    for vertex in land_dict[0]['vertices']:
-        all_vertex.add(vertex)
+    print(all_vertex)
     for i in range(num_list - 1):
         # 이렇게 하면 graph 들이 생김
-
-
         for vertex in land_dict[i+1]['vertices']:
-            if vertex in land_dict[i]['vertices']:
-                new_vertex2 = vertex + (i+1) * 10
-                new_vertex1 = vertex + i *10
-                new_edge = [new_vertex1, new_vertex2]
-                all_vertex.add(new_vertex1)
-                all_vertex.add(new_vertex2)
-                land_dict[0]['edges'].append(new_edge)
+            vertex_before = vertex - 10
+            if vertex_before in land_dict[i]['vertices']:
+                new_edge = [vertex, vertex_before]
+                all_edges.append(new_edge)
 
-
-    all_vertex = list(all_vertex)
-    print(all_vertex)
+    print("all edges:", all_edges)
         # graph 를 combine 할 수 있음 좋음
-    UG = undi_graph(all_vertex, land_dict[0]['edges'])
+    UG = undi_graph(all_vertex, all_edges)
     UG.DFT()
     print(UG.max)
 if __name__ == '__main__':
@@ -100,6 +93,24 @@ if __name__ == '__main__':
         [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
     ])
+    P2([[0, 0, 0, 0, 0, 0, 0, 0]])
+    P2(
+        [[1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
+         [0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1], [1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1],
+         [0, 1, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1], [0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1],
+         [0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 0, 1], [1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1],
+         [1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1],
+         [0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1], [1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1],
+         [0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0],
+         [0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1], [1, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0],
+         [1, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0], [0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0],
+         [1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1], [1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 1, 0],
+         [0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0], [1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 1],
+         [0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0], [0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0],
+         [1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0], [0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0],
+         [0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1],
+         [0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0]]
+    )
     ##################
     # Your code here #
     ##################
