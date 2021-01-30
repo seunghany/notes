@@ -38,6 +38,8 @@ class undi_graph():
         return self.max
 
 def P2(grid) -> int:
+    multiplier = len(grid[0])
+    print("multiplier:", multiplier)
     # 바다를 없애고 land의 index 만 구하기
     all_vertex = []
     all_edges = []
@@ -47,10 +49,11 @@ def P2(grid) -> int:
         for i in range(len(grid[j])):
             if grid[j][i] == 1:
                 # land
-                position = i + j*10
+                position = i + j*multiplier
                 land_index.append(position)
                 all_vertex.append(position)
         new_grid.append(land_index)
+    print("Below is list of indices where land is located")
     print("new_index_grid:", new_grid)
     # make edges
     land_dict = {}
@@ -66,22 +69,22 @@ def P2(grid) -> int:
         land_dict[i]["edges"] = edges
         all_edges.extend(edges)
     print("dictionary:", land_dict)
-    print("---" * 50)
     num_list = len(new_grid)
-    print(all_vertex)
+    print("All veetex: ", all_vertex)
     for i in range(num_list - 1):
         # 이렇게 하면 graph 들이 생김
         for vertex in land_dict[i+1]['vertices']:
-            vertex_before = vertex - 10
+            vertex_before = vertex - multiplier
             if vertex_before in land_dict[i]['vertices']:
                 new_edge = [vertex, vertex_before]
                 all_edges.append(new_edge)
 
-    print("all edges:", all_edges)
+    print("All edges:", all_edges)
         # graph 를 combine 할 수 있음 좋음
     UG = undi_graph(all_vertex, all_edges)
     UG.DFT()
-    print(UG.max)
+    print("The area of the biggest land is: ", UG.max)
+    print("--"*50)
 if __name__ == '__main__':
     P2([
         [0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
@@ -94,6 +97,7 @@ if __name__ == '__main__':
         [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
     ])
     P2([[0, 0, 0, 0, 0, 0, 0, 0]])
+
     P2(
         [[1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1], [0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0],
          [0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1], [1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1],
