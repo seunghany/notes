@@ -44,5 +44,19 @@ mydict = {"A": [np.random.randint(7) for i in range(5)],
           "B": [np.random.randint(1, 20) for i in range(5)],
           "C": [np.random.rand() for i in range(5)],
           "D": [np.random.randn() for i in range(5)]}
-df3 = pd.DataFrame(mydict)
-print(df3)
+
+
+# # date
+# df4 = pd.DataFrame({'year': [2020, 2020, 2020, 2020, 2020],
+#                     'month': [1, 1, 1, 1, 1],
+#                     'day': [1, 2, 3, 4, 5]
+#                     })
+# df4 = pd.to_datetime(df4, format='%Y%m%d', errors='ignore')
+# print(df4)
+dates = pd.date_range('2020-01-01', periods = 5)
+# df3 = pd.DataFrame(mydict, index=df5)
+# 또는
+df = pd.DataFrame(mydict)
+df = df.set_index(dates)
+
+print(df)
