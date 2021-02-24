@@ -1,0 +1,48 @@
+# What is pandas?
+# Pandas is an abbreviation for (Python Data Analysis Library).
+# It is a library that helps you handle dataframe.
+
+# What is DataFrame?
+# DataFrame is the most common structured API and simply represents a table of data with rows and columns
+# We could call these (Structured Data, tabular Data)
+
+# 0. Importing pandas
+import pandas as pd
+
+# 1. Creating DataFrame
+L = [1, 2, 3, 4, 5]
+df = pd.DataFrame(L)
+# print(df)
+#    0
+# 0  1
+# 1  2
+# 2  3
+# 3  4
+# 4  5
+
+# the first Column is index and the second column is the series of data created from the list
+L2 = {"id": [1, 2, 3, 4, 5], "name": ["A", "B", "C", "D","E"]}
+df2 = pd.DataFrame(L2)
+# print(df2)
+#    id name
+# 0   1    A
+# 1   2    B
+# 2   3    C
+# 3   4    D
+# 4   5    E
+#
+import numpy as np
+
+# np.random.randint() # 균일 분포의 정수 난수 1개 생성
+# np.random.randint(6)  -> 0부터 5 사이 랜던함 숫자 하나 (6 안나옴)
+# np.random.randint(1, 20)  -> 1부터 19 사이 랜던함 숫자 하나 (20 안나옴)
+
+# np.random.rand()    # 0 부터 1 사이 균일 분포에서 난수 Matrix array 생성
+# np.random.randn()    # 가우시안 표중 정규 분포에서 난수 Matrix array 생성
+
+mydict = {"A": [np.random.randint(7) for i in range(5)],
+          "B": [np.random.randint(1, 20) for i in range(5)],
+          "C": [np.random.rand() for i in range(5)],
+          "D": [np.random.randn() for i in range(5)]}
+df3 = pd.DataFrame(mydict)
+print(df3)
