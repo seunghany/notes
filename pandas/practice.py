@@ -60,3 +60,33 @@ df = pd.DataFrame(mydict)
 df = df.set_index(dates)
 
 print(df)
+
+# L = ["A", "B", "C", "D"]
+# output_table = []
+# for i in range(12):
+#     temp = []
+#     for alphabet in L:
+#         element = alphabet + str(i)
+#         # A0 ~ D0
+#         temp.append(element)
+#     output_table.append(temp)
+# df = pd.DataFrame(output_table, columns = L)
+# print(df)
+# Shorter Version
+cols = ['A', 'B', 'C', 'D']
+data = [[c+str(i) for i in range(12)] for c in cols]
+df_b = pd.DataFrame(np.array(data).T, index=range(0, 12), columns=cols)
+print(df_b)
+
+# Printing top 5 rows from the df_b
+print(df_b[:5])  # or df_b.head()
+
+# Printing columns of database
+print(df_b.columns)
+# Printing index of database
+print(df_b.index)
+# Printing values of database
+print(df_b.values)
+
+# Dataframe 요약정보 출력
+df_b.info()
