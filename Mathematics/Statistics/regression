@@ -1,0 +1,24 @@
+What is Regression analysis
+In statistical modeling, regression analysis is a set of statistical processes for estimating
+the relationships between a dependent variable (often called the 'outcome variable')
+and one or more independent variables (often called 'predictors', 'covariates', or 'features').
+from wikipedia
+
+Regression analysis is primarily used for two conceptually distinct purposes.
+First, regression analysis is widely used for prediction and forecasting,
+where its use has substantial overlap with the field of machine learning.
+Second, in some situations regression analysis can be used to infer causal
+relationships between the independent and dependent variables.
+Importantly, regressions by themselves only reveal relationships between a dependent variable
+and a collection of independent variables in a fixed dataset. To use regressions for prediction
+or to infer causal relationships, respectively, a researcher must carefully justify why existing
+relationships have predictive power for a new context or why a relationship between two variables
+has a causal interpretation. The latter is especially important when researchers hope to estimate
+causal relationships using observational data. - from wikipedia
+
+Summary
+Regression is primarily used for two conceptually distinct purposes (두가지 이유에서 많이 사용된다)
+1. Regression analysis is widely used for prediction and forecasting.
+Note -> 모델링한 X의 범위 내에서 새로운 X*값에 대한 Y값을 알고자하는 것을 Prediction 라고 보고,
+ 모델링하는 X의 범위를 벗어난 새로운 X의 값에 대한 Y값을 알고자 하는 것을 Forecast 라고 보면 됨
+2. Independent 와 dependent variable 의 relationship 을 찾기 위해

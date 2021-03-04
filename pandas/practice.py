@@ -36,7 +36,6 @@ import numpy as np
 # np.random.randint() # 균일 분포의 정수 난수 1개 생성
 # np.random.randint(6)  -> 0부터 5 사이 랜던함 숫자 하나 (6 안나옴)
 # np.random.randint(1, 20)  -> 1부터 19 사이 랜던함 숫자 하나 (20 안나옴)
-
 # np.random.rand()    # 0 부터 1 사이 균일 분포에서 난수 Matrix array 생성
 # np.random.randn()    # 가우시안 표중 정규 분포에서 난수 Matrix array 생성
 
@@ -51,7 +50,7 @@ mydict = {"A": [np.random.randint(7) for i in range(5)],
 #                     'month': [1, 1, 1, 1, 1],
 #                     'day': [1, 2, 3, 4, 5]
 #                     })
-# df4 = pd.to_datetime(df4, format='%Y%m%d', errors='ignore')
+# df4 = pd.to_datetime(df4, format='%Y%mx%d', errors='ignore')
 # print(df4)
 dates = pd.date_range('2020-01-01', periods = 5)
 # df3 = pd.DataFrame(mydict, index=df5)
@@ -90,3 +89,5 @@ print(df_b.values)
 
 # Dataframe 요약정보 출력
 df_b.info()
+print("Describe()")
+print(df_b.describe())

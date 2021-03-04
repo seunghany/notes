@@ -7,7 +7,7 @@ Topic
 
 Simple Linear Regression
     - Predict the value of one variable y based on another variable X
-        -> X is called Independent V ariable
+        -> X is called Independent Variable
         -> y is called Dependent Variable
     - Why do we call it simple?
         -> Because it examines the relationship between two variables only.

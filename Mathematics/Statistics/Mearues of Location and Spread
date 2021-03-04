@@ -1,0 +1,22 @@
+Types of Data
+In statistics, we collect observations or measurements of some variables.
+These observations are known as data.
+Variables associated with non-numerical data are qualitative variables.
+Variables associated with numerical data are qualitative variables
+
+Qualitative Variable - Non-numerical data
+eg. Favorite color or favorite animal
+
+Quantitative Variable - Numerical Data
+1. Discrete Data
+    -> Takes specific values in a given range
+    -> e.g Number of girls in a family or number of bowling pins left standing
+
+2. Continuous Data
+    -> Takes any value in a given range
+    -> e.g A person's weight or the distance between two points
+
+나는 예전에 보통 셀수 있는지 없는지로 많이 나눴던거 같다.
+예를 들면 가족 구성원의 숫자는 셀 수 있지만,
+몸무게는 셀 수 없지 않은가? 56.454929239kg...
+
