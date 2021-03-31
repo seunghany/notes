@@ -92,6 +92,14 @@ print("---" * 30)
 
 # df_A를 이용해서, 2020년 1월 2일부터 2020년 1월 4일까지의
 # 데이터중에 column A, B에 해당하는 데이터를 출력하는 코드를 작성해보세요.
+print(df.iloc[1:4, 0:2])
+print("---" * 30)
+# 0 보다 큰 데이터 출력, 조건이 없으면 NaN 으로 출력
+df_C = df[df < 0] = "NaN"
+print(df[(df >= 0).all(axis=1) | (df <= 0).all(axis=1)])
 
-print("")
-print(df[, ["A","B"]])
+# Dataframe.[ ] ; This function also known as indexing operator
+# Dataframe.loc[ ] : This function is used for labels.
+# Dataframe.iloc[ ] : This function is used for positions or integer based
+# Dataframe.ix[] : This function is used for both label and integer based
+
