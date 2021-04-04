@@ -1,0 +1,114 @@
+What is Machine Learning?
+
+Learn from
+1. Experience (E) -> 무슨 과정?
+with respect to some class of
+2.tasks (T) and -> 무슨 일?
+3. Performance measure (P) -> 성능
+
+
+* 테스크를 경험을 통해서 성능을 향상시키는 것
+
+
+Example: A program for soccer tactics
+T: Win the game
+P: Goals
+E: (x) Player's Movement
+   (y) Evaluation
+
+------------------------------------------------
+예)
+T: 대학 가기
+Performance Measure: 좋은 성적 받기
+Experience: 문제 푸는 과정
+
+----------------------------------------------------------------------------------
+3 Main Tasks
+1. Classification 분류 (Labled Data)
+    - 목적이(Task)가 구분되어 있으면 (Discrete)
+2. Regression 회계 (Labled Data)
+    - 연속된 일을 예측 하는것
+    - 연속된 값을 예측
+3. Clustering 클러스터링 (Unlabeled Data)
+    - Label 없음 -> Undersupervised
+    - 군집 설명
+    - 목적하는 target값이 없고 그냥 데이터를 보고 싶음
+
+--------------------------------------------------------------------
+y = ax + b
+Analytic solution
+Least square
+
+Numerical Solution
+1. Set a cost function 또는 Objectivec function
+2. Apply an optimization method
+    - Cost function이 제일 적은거 찾기
+    - eg) Gradient descent method가 가장 간단한 방법 중 하나
+        -> gradient descent 항상 좋지 않음
+        -> 이유) local minimum 이 많을 경우.
+        -> 글로벌 미니멈을 찾아야 함! -> 제일 작은 value
+----------------------------------------------------------------------------
+What would be a correct model?
+select a model -> Set a cost function -> Optimization
+데이터를 보고 데이터가 뭐를 의미하는지 모델을 설정
+그 모델을 optimization 방법으로 풀기
+
+문제점
+1. 모델 설정 하기 어려움!
+    -> 지금까지 데이터를 잘 설명하는 모델
+    -> 너무 변화가 심한 데이터는 (예 x^100 백차 함수) 데이터를 잘 설명할 수 있지만,
+    예측에는 별로임 (이런걸 overfitting 이라고 함)
+    -> Unseen data를 예측 하는걸 찾아야 함. 미래를 예측하는!
+
+어떻게 해결할 것인가?
+L2 Regularization -> 복잡한 모델을 피하자는 의미
+1) 현재를 설명하고
+2) 미래를 잘 설명 -> 복잡한 모델을 피하자
+
+------------------------------------------------------------------------------
+훈련 과정!
+1. 갖고 있는 데이터를 나눈다
+    - Training set, Validation set, Test Set
+    - eg) Training set (0.8) , Validation set (0.2)
+훈련을 (Training time) 하다 보면 Training set의 error는 게속 줄어드는데,
+Validation set의 error는 어느순간 늘어날 수 있음
+이 때 게속 Training을 하는게 아니라, Minimum에서 Training을 멈추고 그 모델을 사용
+
+이런 것들을 하는게 parametric model
+예를 들면 y = ax + b, y = ax^2 + bx + c ... 등등
+
+근데 알고리듬이 이 모델들을 자동을 찾아준다면?? (very nice)
+이런것을 Non parametric model
+이렇게 된다면 성능도 좋을 것! 하지만 문제점은 데이터가 많이 필요함
+
+대표적인 모델 (Supervised learning)
+    - Kernel method
+        - Frequently applied for modelling data
+    - Gaussian Process Regression (GPR)
+        - a sort of kernel method, is widely used non parametric Regression method
+        - (데이터가 많지 않을 때)
+        - GPR 의 한계 -> (inverse 구해야함) O(n^3) 이기 때문에 데이터가 너무 많아지면 컴퓨터 성능이 못 따라감
+        -> 따라서 데이터가 많지 않을 때 사용 해야함
+        - 장점은 대신에 성능이 매우 좋음
+        - 아름다운 값을 줄 수 있음
+        - gpml library
+    - Support Vector Machine (SVM)
+        - also a kernel method, widely used Non parametric Classification method
+
+Kernel Function은 무엇을 할까?
+
+(정리가 안된) Raw data  에서는 보기가 힘드니깐, 데이터 전처리를 통해서 좋은 공간 (보기 편한) 에서 작업 하자
+Linear data 에서  Non linear data 로 움기자
+왜? 보통 데이터는 linear 하지 않으니깐
+
+--------------------------------------------------------------------------------------------------
+Unsupervised Learning
+Dimension reduction -> 왜 하냐? 차원의 저주! 차원 줄여서 빠르게 계산하자
+- PCA, Principal Component Analysis(대표적인 예)
+
+----------------------------------------------------------------------------
+Machine Learning Process
+1. Select a Parametric/Non parametric Model                                (모델 정하기)
+2. Set a performance measurement including regularization term             (모델 너무 복잡해 지지 않게 만드는 것)
+3. Training Data (Optimizing parameters) until validation error increase   (모델 적용하기)
+4. Evaluate the final performance using test set                           (모델 평가하기)

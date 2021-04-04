@@ -1,0 +1,64 @@
+Top 5 머신러닝 알고리즘 – Future Skill
+	이것만큼은 알고 시작하자 에서 top 5
+영어 용어가 중요하다
+1.	Linear Regression (회계 분석)
+    a.	X 값의 따라서 y 값이 증가하거나 줄어드거나
+    b.	예 x = 키 y = 몸무게
+    c.	왜 추천 하는가?
+        i.	가장 기본적인 기법
+        ii.	해석하기 쉬움
+2.	Logistic Regression
+    a.	Linear Regression이 Continuous 라면 logistics 은 Yes or no (0, 1) 인지 예측
+    b.	Logistic Regression 은 S자 모양으로 바뀜
+    c.	얻을 수 있는 숫자는 최소가 0, 최대가 1
+    d.	0.3 이면 30프로 확률로
+    e.	뽑은 이유
+        i.	Binary Classification을 위한 가장 기본적인 기법
+        ii.	해석하기 쉬움
+        iii.	Deep learning을 배우면 Activation function 에서 sigmoid란 이름으로 Logistic Regression과 동일한 기능을 하는게 등장한다. 그래서 이거를 모르고 머신러닝을 공부한다는것은 기본을 모르는 것이다. 머신러닝 전반에 근간을 다지는 알고리즘
+3.	Decision Tree
+    a.	Linear Regression 이나 Logistic Regression 은 x 값에 따라 y 값이 늘거나 줄어든다면, Decision Tree는 스무고개 같은 알고리즘이다.
+    b.	예 과읠의 종류를 분류  한다면,
+        i.	빨간색이냐?
+        ii.	지름은?
+        iii.	등등
+        iv.	첫번째가 제일 ㅎ
+    c.	왜 Decision Tree??
+        i.	활용 범주가 넒다
+            1.	Linear Regression 같은 경우는 연속된 숫자 예측
+            2.	Logistic Regression 같은 경우는 Yes or no 같은 binary classification
+            3.	Decision Tree 는 일단 둘다 가능
+            4.	플러스 다중 클래스 -> 3가지 과일을 분류 하는 등, 여러가지를 분류 할 수 있다.
+        ii.	Visualization이 좋다-> 해석이 좋다
+            1.	특히 coding 모르시는 분들한테 설명한테 diagram 이랑 보여주면 설명하기 쉽다
+            2.	다른 Tree 모델도 많지만, 제일 기본이 되는 모델이다
+4.	Random Forest - > 많은 Tree 모델
+    i.	Decision Tree에 있던 단점들을 , 여러개 트리를 활용함으로 써 극복 해 낸 모델
+    ii.	구체적으로는 overfitting 문제를 해결 할 수 있는 알고리즘
+    iii.	중요한 이유
+        1.	활용 범주가 넓음
+            a.	연속형 변수, Yes or no, 다중 Classification 등
+        2.	 앙상블 모델의 기본 알고리즘이기 때문
+            a.	여러개의 모델을 합쳐 하나의 앙상블을 만들어 내 좋은 결과 만들기.
+        3.	예측 능력이 좋다 **
+            a.	앞서 말한 세가지 (Linear Regression, Logistic Regression, Decision Tree) 보다 나은 예측 능력을 보여줌
+            b.	어느정도 실무 문제는 다 할 수 있음
+5.	Kmeans Clustering
+        앞서 말씀드린 4가지 알고리즘은 다 Supervised Learning이고 이건 Unsupervised Learning
+    i.	이건 Unsupervised Learning 이기 때문에 Y 값을 모름. 뭐가 답이 나올지 모름
+    ii.	그룹의 특징을 잘 묵어줌
+    iii.	왜??
+    1.	Segmentation용이
+    2.	Unsupervised Learning 이기 때문
+
+6.	XGBost (side)
+    i.	Tree Model 중 하나
+    ii.	최신 기법중 하나 (XGBoost, LightGBM, Cat Boost etc)
+    iii.	Random forest로 Kaggle competition 들어간다??
+        1.	좋은 랭킹 받기 거의 불가능
+        2.	그나마 xgboost 써야 조금이라도 랭킹 나올 수 있음
+
+
+
+
+
