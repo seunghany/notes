@@ -1,5 +1,6 @@
 from sklearn.datasets import load_breast_cancer
-
+import pandas as pd
+import matplotlib.pyplot as plt
 # The breast cancer dataset is a classic and very easy binary classification dataset.
 
 # return_X_ybool, default=False
@@ -9,11 +10,11 @@ from sklearn.datasets import load_breast_cancer
 #  The target is a pandas DataFrame or Series depending on the number of target columns.
 #  If return_X_y is True, then (data, target) will be pandas DataFrames or Series as described below.
 #
-data = load_breast_cancer()
-print(data.target[[10, 50, 85]])
-print(list(data.target_names))
+dataset = load_breast_cancer()
+X, y = dataset.data, dataset.target # Breaset Cancer 데이터를 X, y로 나누어 저장
+X = pd.DataFrame(X, columns=dataset.feature_names)
 
-# X, y = load_breast_cancer(as_frame=True)
 # print("X: ", X)
 # print("y: ", y)
+
 
