@@ -1,0 +1,24 @@
+What are Generative Models?
+
+Models that use an unsupervised learning approach in a generative model
+ -> there are samples in the data that is input variables X
+ -> but lacks in output variable Y
+so
+ -> we use the (only) input variables to train the generative model and it recognized the pattern
+ from the input variables to generate an output that is unknown and based on the training data only
+
+In supervised learning,
+we are more aligned towards creating predictive models from the input variables and this type of modelling
+is also known as discriminative modelling.
+And
+In Classification problem, the model has to discriminate as to which class the example belongs to
+and on the other hand, unsupervised models are used to create or generate new examples in the input distribution
+to define a generative model in layman terms we can say generative models are able to generate new examples from the
+new sample that are not only similar to the examples but are distinguishable as well.
+
+and the most common example of a generative model is a knife bias classifier which is more often used.
+Other discriminative model other examples of generative models include Gaussian mixture model and a rather
+modern example that is generative adverse networks. so let us try to understand what exactly are GANs
+or genrative adverse real networks.
+
+Generative adversarial network or GANs are deep learning based generative model that is used for unsupervised learning
