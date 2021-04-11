@@ -1,0 +1,19 @@
+전처리
+표준화 (Standarisation) vs 정규화 (Normalisation)
+
+이상치 처리 (Outlier)
+일반적으로
+1) 표준점수로 변환 후 -3 이하 및 +3 제거
+2) IQR 방식
+3) 도메인 지식 이용하거나 Binning 처리하는 방식이 이용된다.
+   표준점수 이용할 경우 평균이 0, 표준편차가 1인 분포로 변환한후 +3 이상이거나 -3 이하인 경우 극단치로 처리한다
+
+def std_based_outlier(df):
+    for i in range(0, len(df.iloc[1])):
+        df.iloc[:,i] = df.iloc[:,i].replace(0, np.NaN) # optional
+        df = df[~(np.abs(df.iloc[:,i] - df.iloc[:,i].mean()) > (3*df.iloc[:,i].std()))].fillna(0
+
+
+IQR 방식은 75% percentile + 1.5 * IQR 이상이거나 25 percentile - 1.5 * IQR 이하인 경우 극단치로 처리하는 방식이다.
+이해하기 쉽고 적용하기 쉬운 편이지만, 경우에 따라 너무 많은 사례들이 극단치로 고려되는 경우가 있다.
+

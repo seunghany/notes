@@ -15,7 +15,8 @@ Top 5 머신러닝 알고리즘 – Future Skill
     e.	뽑은 이유
         i.	Binary Classification을 위한 가장 기본적인 기법
         ii.	해석하기 쉬움
-        iii.	Deep learning을 배우면 Activation function 에서 sigmoid란 이름으로 Logistic Regression과 동일한 기능을 하는게 등장한다. 그래서 이거를 모르고 머신러닝을 공부한다는것은 기본을 모르는 것이다. 머신러닝 전반에 근간을 다지는 알고리즘
+        iii.	Deep learning을 배우면 Activation function 에서 sigmoid란 이름으로 Logistic Regression과 동일한 기능을 하는게 등장한다.
+                그래서 이거를 모르고 머신러닝을 공부한다는것은 기본을 모르는 것이다. 머신러닝 전반에 근간을 다지는 알고리즘
 3.	Decision Tree
     a.	Linear Regression 이나 Logistic Regression 은 x 값에 따라 y 값이 늘거나 줄어든다면, Decision Tree는 스무고개 같은 알고리즘이다.
     b.	예 과읠의 종류를 분류  한다면,
