@@ -1,0 +1,57 @@
+Poisson Distribution
+
+    - Discrete probability distribution
+    - Modelling random events
+
+    When do we use it?
+    Situations often arise where the variable of
+    - Interest in number of occurences of a particular event
+    - in a given interval of space or time
+
+    e.g
+    Number of phone calls arriving in 100 consecutive time intervals of 5 minutes
+
+    오분안에 전화가 몇번 오는지
+    총 횟수는 = n = 100
+
+    ------------------------------------------------------------------------------------
+    오키 특성들을 알았어 그럼 언제 쓸 수 있을까??
+
+    When can we use Poisson Distribution?
+    Binomial Distribution in the situation where the number of trials is very large and the
+    probability of success is very small.
+
+    정리
+    Poisson Distribution is suitalbe model for events which
+    1. Occur randomly in space or time,
+    2. Occur single, that is events cannot occur simultaneously,
+    3. Occur independently, and
+    4. Occur at a constant rate, that is the mean number of events in a given time interval
+       is proportional to the size of the interval.
+    ----------------------------------------------------------------------------------------------
+    수학적 Mean, Variance
+
+    X ~ Po(rambda)
+    mean     = m       = E(X)   = rambda
+    Variance = sigma^2 = Var(X) = rambda
+
+    -> 둘이 같으니깐 Poisson 인지 간단하게 Check 하는 방법은 Mean = Variance 체크
+    ----------------------------------------------------------------------------------------------
+    The Poisson Distribution as an approximation to the Binomial Distribution
+
+    특정한 컨디션에서는 Binomial 대신 Poisson 을 쓸 수 있음
+    언제?
+    N = Large
+    p = small
+
+    If X ~ B(n,p) and if n > 50 and np < 5 then
+    X can be approximated by the Poisson Distribution
+    W ~ Po(np)
+    Larger the N, Smaller the P -> Better Approximation
+    ---------------------------------------------------------------------------------------
+    반대로 포이썬은 -> Normal Distribution 될 수 있음
+
+    If X~Po(rambda) and if rambda > 15 then X may resonably be approximated by the
+    Normal Distribution Y~N(rambda, rambda)
+    A continuity correction must be applied.
+    The larger rambda -> better approximation.

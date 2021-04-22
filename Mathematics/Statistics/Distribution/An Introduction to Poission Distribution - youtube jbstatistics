@@ -1,0 +1,84 @@
+Poission Distribution
+
+a Poisson distribution is a probability distribution that can be used to show
+how many times an event is likely to occur within a specified period of time
+(Discrete)
+
+Poisson distributions are often used to understand independent events that
+occur at a constant rate within a given interval of time.
+
+key note
+1. How many times an event is likely to occur within a specified period of time
+2. Often used to understand independent events
+3. that occur at a constant rate
+4. within a given interval of time
+
+e.g
+Suppose we are counting the number of occurences of an event in a given unit of time, distance, area, or volume.
+
+For example:
+    - The number of car accidents in a day.
+    - The number of dandelions(민들레) in a square metre plot of land.
+
+Then the number of events is going to be a random variable
+that may or may nor have the poisson distribution depending on situation.
+
+Poission random variable is a count of number of occurrences of an event
+
+Characteristics of poission distribution
+    - Events are occuring indepdently
+        - Events of A does not affect event of B
+    - The proability that an event occurs in a given length of time does not change through time
+    meaning (Events are occuring randomly and indepedently)
+
+
+    - ㅅ = rambda
+    - P(X=x) = (ㅅ^x * e^(-ㅅ))/x!
+    - x can be any non negative integer (whole number)
+        -> 0, 1, 2, ...., infinity
+    mean = rambda
+    variance = rambda
+
+    E.g
+    - plutonium-239 have an average of 2.3 radioactive decays per second
+    - number of decays follow poisson distribution
+
+    What is the probability that in a 2 second period there are exactly 3 radioactive decays?
+    - Let X represent the number of decays in a 2 second period
+    rambda = 2.3 * 2 = 4.6
+    왜냐하면 2초니깐 * 2
+    P(X=3) =  (ㅅ^x * e^(-ㅅ))/x! = 4.6^3 * e^4.6 / 3 !
+           = 0.163 (3 s.f)
+
+    There is no upper bound in Poisson Distribution but prob goes negligible
+
+    P(X<=3) = P(X=0) + P(X=1) + P(X=2) + P(X=3)
+            = 4.6^0.... +4.6^1.. + .....
+            = 0.326
+    숫자가 많아지면 계산할게 너무 많아짐 그래소 보통 software programming 으로 해결
+
+    The Relation Between the Binomial and Poisson Distribution
+
+    The Binomial Distribution tends toward the Poisson Distribution as n -> infinity, p -> 0
+    and np stays constant
+
+    The Poisson Distribution with rambda = np
+    closely appoximates the binomial distribution if n is large and p is small.
+
+    This is why radioactive decays of plutonium has a poisson distribution.
+    Even for a tiny bit of plutonium, there are a very large number of atoms,
+    and each one has a tiny probability of experiencing a radioactive decay in a 2 seconds period
+
+    so
+
+    -> 그래서 Decay 하냐 안하냐는 사실 Binomial distribution 인데 -> Large N but Small p
+    -> Approximates by the Poisson Distribution
+
+    The Poisson distribution is typically used as an approximation to the true underlying reality.
+    In most situations where we use the Poisson, we know the Poisson distribution doesn't fit the scenario precisely
+    but we use it as an approximation. -> Very good Approximation
+
+    포이썬이 실생활 문제를 예측 할 때 많이 쓰이는데, 문제는 포이썬이 정확히 딱 들어 맞지는 않음.
+    그래서 포이선을 쓸때는  Approximation 으로 쓰는데 이게 꽤 정확홤.
+
+    근데 문제는 random variable 이 Poisson distribution 을 따르는지 안따르는지 이걸 결정하기가 굉장히 어려움
